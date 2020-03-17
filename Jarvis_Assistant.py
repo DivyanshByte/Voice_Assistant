@@ -7,7 +7,7 @@ import requests
 import wikipedia
 import playsound
 from gtts import gTTS
-import wolframalpha # to calculate strings into formula 
+import wolframalpha  
 import os.path
 import datetime
 
@@ -132,7 +132,7 @@ def process_text(input):
 		elif "email" in input or "send email" in input or "write email" in input:
 			assistant_speaks("Whom do you want to send email ? ")
 			recipent = get_audio()
-			if "Divyansh" in recipent:
+			if "Recipent_1" in recipent:
 				assistant_speaks("What should I Write to Him ?")
 				content = get_audio()
 				mail = smtplib.SMTP('smtp.gmail.com', 587)
@@ -141,7 +141,7 @@ def process_text(input):
 				mail.login('username', 'password')
 				mail.sendmail('sender_email', 'reciever_email', content)
 				mail.close()
-				assistant_speaks("Mail had been send to Divyansh.")
+				assistant_speaks("Mail had been send to Recipent_1")
 			else:
 				assistant_speaks("Cannot find any Recipent")
 			return
