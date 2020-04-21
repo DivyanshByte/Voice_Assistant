@@ -13,3 +13,4 @@
 * WolframAlpha
 * OS.Path
 * DateTime
+* PyAudio
