@@ -148,7 +148,7 @@ def process_text(input):
 		elif "open" in input:
 			assistant_speaks("Tell me website domain name, you want to open.")
 			domain = get_audio()
-			os.system("chrome " + "https://www." + domain)
+			os.system("start chrome " + "https://www." + domain)
 		
 		elif "help me" in input:
 			assistant_speaks(""" 
@@ -187,7 +187,7 @@ def search_web(input):
 		assistant_speaks("Opening in youtube") 
 		indx = input.lower().split().index('youtube') 
 		query = input.split()[indx + 1:] 
-		os.system("chrome " + "http://www.youtube.com/results?search_query =" + "+".join(query)) 
+		os.system("start chrome " + "http://www.youtube.com/results?search_query =" + "+".join(query)) 
 		return
 
 	elif "wikipedia" in input.lower(): 
@@ -195,7 +195,7 @@ def search_web(input):
 		assistant_speaks("Opening Wikipedia") 
 		indx = input.lower().split().index("wikipedia") 
 		query = input.split()[indx + 1:] 
-		os.system( "chrome " + "https://en.wikipedia.org/wiki/" + "_".join(query)) 
+		os.system( "start chrome " + "https://en.wikipedia.org/wiki/" + "_".join(query)) 
 		return
 
 	else: 
@@ -204,17 +204,17 @@ def search_web(input):
 
 			indx = input.lower().split().index("google") 
 			query = input.split()[indx + 1:] 
-			os.system("chrome " + "https://www.google.com/search?q =" + "+".join(query)) 
+			os.system("start chrome " + "https://www.google.com/search?q =" + "+".join(query)) 
 
 		elif "search" in input: 
 
 			indx = input.lower().split().index("google") 
 			query = input.split()[indx + 1:] 
-			os.system("chrome "+"https://www.google.com/search?q =" + "+".join(query)) 
+			os.system("start chrome "+"https://www.google.com/search?q =" + "+".join(query)) 
 
 		else: 
 
-			os.system("chrome "+"https://www.google.com/search?q =" + "+".join(input.split())) 
+			os.system("start chrome "+"https://www.google.com/search?q =" + "+".join(input.split())) 
 
 		return
 
@@ -225,17 +225,17 @@ def open_application(input):
 
 	if "chrome" in input: 
 		assistant_speaks("Google Chrome") 
-		os.system("chrome")
+		os.system("start chrome")
 		return
 
 	elif "firefox" in input or "mozilla" in input: 
 		assistant_speaks("Opening Mozilla Firefox") 
-		os.system("firefox")
+		os.system("start firefox")
 		return
 
 	elif "code" in input: 
 		assistant_speaks("Opening Visual Studio Code") 
-		os.system("code")
+		os.system("start code")
 		return
 
 	elif "Command Prompt" in input: 
@@ -245,7 +245,7 @@ def open_application(input):
 	
 	elif "File Browser" in input:
 		assistant_speaks("Opening File Browser")
-		os.system("C:")
+		os.system("start explorer")
 		return
 
 	else: 
